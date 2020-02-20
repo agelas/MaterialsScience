@@ -50,8 +50,6 @@ function H = calculateHIron(temperature, plotGraph)
     if(temperature ~= 298)
         H = trapz(tempRange, cpVals) + heatTransform;
     end
-    %fprintf("Heat of formation: %f\n", H);
-    %fprintf("Specific heat capacity: %f\n", cpVals(end));
     
 %%
     %setVirial sets the virial coefficients based on the phase and 
@@ -59,8 +57,7 @@ function H = calculateHIron(temperature, plotGraph)
     function setVirial(phase, temp)
         if (strcmp('ferroAlpha',phase) || (strcmp('paraAlpha', phase))...
                 || (strcmp('delta', phase)))
-            if (temp >= 298) && (temp < 700) %Is it <= 700?
-                %fprintf("set");
+            if (temp >= 298) && (temp < 700) 
                 A = 18.42868;
                 B = 24.64301;
                 C = -8.913720;
@@ -84,10 +81,7 @@ function H = calculateHIron(temperature, plotGraph)
                 B = 919.4005;
                 C = -383.7184;
                 D = 57.08148;
-                E = 242.1369;
-            else 
-                fprintf("%d", temp);
-                fprintf("Not in valid temperature range\n");  
+                E = 242.1369;  
             end
         elseif(strcmp('gamma',phase))
             A = 23.97449;

@@ -118,21 +118,18 @@ function [hematiteH, aluminumH, alOH] = calculateHThermite(temperature, plotGrap
     %one phase, so coefficients are only dependent on temperature.
     function setVirialFe2O3(temp)
         if (temp < 950)
-            %fprintf("set Fe2O3 <950\n");
             A = 93.43834;
             B = 108.3577;
             C = -50.86447;
             D = 25.58683;
             E = -1.611330;
         elseif (temp >= 950) && (temp < 1050)
-            %fprintf("set Fe2O3 950-1050\n");
             A = 150.6240;
             B = 0;
             C = 0;
             D = 0;
             E = 0;
         elseif (temp >= 1050) && (temp < 2500)
-            %fprintf("set Fe2O3 1050-2500\n")
             A = 110.9632; 
             B = 32.04714;
             C = -9.192333;
@@ -156,7 +153,6 @@ function [hematiteH, aluminumH, alOH] = calculateHThermite(temperature, plotGrap
         else
             %If not liquid, it's solid in which case there's only one set
             %of virial coefficients for solids
-            %fprintf("set Al solid\n");
             A = 28.08920; 
             B = -5.414849;
             C = 8.560423;

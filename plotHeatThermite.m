@@ -23,6 +23,6 @@ function plotHeatThermite(temperature)
     plot(tempRange, heatReaction);
     xlabel('Temperature (K)')
     ylabel('Heat Reaction (kJ/mol)')
-    %ylim([-18571.2 18571.3]);
+    title('Heat of Reaction')
     
 end
