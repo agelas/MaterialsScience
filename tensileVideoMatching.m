@@ -4,7 +4,7 @@
 %can only read UTF-8 encoded .txt files. but the tensile tester creates
 %UTF-16 encoded .txt files.
 
-fid = fopen('Mg1Zn0.2Ca_tensiletest2.txt','r','n','UTF-8');
+fid = fopen('Mg1Zn0.2Ca_test2.txt','r','n','UTF-8');
 bytes = fread(fid)';
 
 if (bytes(1) == 255)
@@ -12,14 +12,14 @@ if (bytes(1) == 255)
     any(bytes(2:2:end) ~= 0);
     asciibytes = bytes(1:2:end);    
     fclose(fid);
-    fid = fopen('Mg1Zn0.2Ca_tensiletest2.txt', 'w+');
+    fid = fopen('Mg1Zn0.2Ca_test2.txt', 'w+');
     fwrite(fid,asciibytes);
     fclose(fid);
 else
     fclose(fid); %Nothing to do if BOM not present
 end
 
-T = readtable('Mg1Zn0.2Ca_tensiletest2.txt'); %
+T = readtable('Mg1Zn0.2Ca_test2.txt'); %Read in data
 
 %%
 %This section breaks the video up into individual frames, and creates a 
