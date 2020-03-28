@@ -37,7 +37,7 @@ end
 
 %%
 %This section matches the frames to the times in the video
-failTime = 81 * 5; %get into 0.2 of a second
+failTime = 81 * 5; %get time interval into fifths of a second
 frameFail = 6 * failTime;
 
 index = find(T{:,:} == 81); %find table index of failure time
